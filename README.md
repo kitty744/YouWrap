@@ -26,7 +26,7 @@ cd <your-repo-folder>
 npm install
 \`\`\`
 
-3. Ensure TypeScript is installed:
+3. Ensure TypeScript is installed globally:
 
 \`\`\`bash
 npm install -g typescript ts-node
@@ -81,7 +81,7 @@ const playlistItems: PlaylistItem[] = await yt.listPlaylistItems(channel.content
 
 ### Sample Output
 
-\`\`\`
+\`\`\`text
 Search results:
 1. TypeScript Tutorial 1 (abc123)
 2. TypeScript Tutorial 2 (def456)
@@ -102,7 +102,7 @@ First 5 playlist items:
 
 ## Project Structure
 
-\`\`\`
+\`\`\`text
 src/
   youtube.ts          # Main YouTube API wrapper
   types.ts            # TypeScript types for videos, channels, playlists
