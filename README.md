@@ -1,6 +1,10 @@
-# YouTube API Wrapper in TypeScript
+# ![YouTube](https://img.shields.io/badge/YouTube-API-red) YouTube API Wrapper in TypeScript
 
-A simple TypeScript wrapper for the YouTube Data API v3. It allows you to search videos, fetch video details, get channel information, and list playlist items. Fully typed with TypeScript for better developer experience.
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.9-blue)](https://www.typescriptlang.org/)
+[![npm version](https://img.shields.io/npm/v/your-package-name)](https://www.npmjs.com/package/your-package-name)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A simple TypeScript wrapper for the YouTube Data API v3. Search videos, fetch video details, get channel info, and list playlist items. Fully typed for a better developer experience.
 
 ## Features
 
@@ -9,46 +13,46 @@ A simple TypeScript wrapper for the YouTube Data API v3. It allows you to search
 - Fetch multiple videos at once
 - Get channel details
 - List videos from a channel's playlist (uploads)
-- TypeScript types for videos, channels, and playlists
+- Fully typed TypeScript interfaces
 
 ## Installation
 
-1. Clone the repository:
+Clone the repository:
 
-\`\`\`bash
+```bash
 git clone <your-repo-url>
 cd <your-repo-folder>
-\`\`\`
+```
 
-2. Install dependencies:
+Install dependencies:
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
-3. Ensure TypeScript is installed globally:
+Ensure TypeScript is installed globally:
 
-\`\`\`bash
+```bash
 npm install -g typescript ts-node
-\`\`\`
+```
 
 ## Setup
 
-You need a **YouTube API Key**. Go to [Google Cloud Console](https://console.cloud.google.com/), create a project, enable **YouTube Data API v3**, then go to **APIs & Services → Credentials → Create Credentials → API Key**. Copy the key.
+You need a **YouTube API Key**. Go to [Google Cloud Console](https://console.cloud.google.com/), create a project, enable **YouTube Data API v3**, then go to **APIs & Services → Credentials → Create Credentials → API Key**.
 
-Set your API key in \`src/index.ts\`:
+Set your API key in `src/index.ts`:
 
-\`\`\`ts
+```ts
 const API_KEY = "YOUR_YOUTUBE_API_KEY";
-\`\`\`
+```
 
 ## Usage
 
 Run the test script:
 
-\`\`\`bash
+```bash
 ts-node src/index.ts
-\`\`\`
+```
 
 This script will:
 
@@ -60,7 +64,7 @@ This script will:
 
 ### Example Code
 
-\`\`\`ts
+```ts
 import { YouTubeAPI } from "./youtube";
 import type { SearchResponse, Video, Channel, PlaylistItem } from "./types";
 
@@ -77,11 +81,11 @@ const videos: Video[] = await yt.getVideos(
 const channel: Channel = await yt.getChannel(searchResults.items[0].snippet.channelTitle);
 
 const playlistItems: PlaylistItem[] = await yt.listPlaylistItems(channel.contentDetails.relatedPlaylists.uploads, 5);
-\`\`\`
+```
 
 ### Sample Output
 
-\`\`\`text
+```text
 Search results:
 1. TypeScript Tutorial 1 (abc123)
 2. TypeScript Tutorial 2 (def456)
@@ -98,11 +102,11 @@ Channel details:
 
 First 5 playlist items:
 [ {...}, {...}, {...}, {...}, {...} ]
-\`\`\`
+```
 
 ## Project Structure
 
-\`\`\`text
+```text
 src/
   youtube.ts          # Main YouTube API wrapper
   types.ts            # TypeScript types for videos, channels, playlists
@@ -110,7 +114,7 @@ src/
 package.json
 tsconfig.json
 README.md
-\`\`\`
+```
 
 ## License
 
